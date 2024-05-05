@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mendelbrot.c                                       :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:15:16 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 18:47:30 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:45:10 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-int	checkmendelbrot(int x, int y, t_fractal *fractal)
+int	checkmandelbrot(int x, int y, t_fractal *fractal)
 {
 	t_complex	z;
 	int			n;
@@ -33,7 +33,7 @@ int	checkmendelbrot(int x, int y, t_fractal *fractal)
 	return (n);
 }
 
-void	mendelbrot(t_fractal *fractal)
+void	mandelbrot(t_fractal *fractal)
 {
 	int	x;
 	int	y;
@@ -46,7 +46,7 @@ void	mendelbrot(t_fractal *fractal)
 		x = fractal->centerx * -1;
 		while (x < fractal->centerx)
 		{
-			n = checkmendelbrot(x, y, fractal);
+			n = checkmandelbrot(x, y, fractal);
 			color = get_rgba((255 * n) / 100, (255 * n)
 					/ 100, (255 * n) / 100, 255);
 			mlx_put_pixel(fractal->image, fractal->centerx + x,

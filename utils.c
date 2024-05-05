@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:41:48 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 13:19:32 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:44:35 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	drawer(t_fractal *fractal)
 {
 	if (fractal->type == 1)
-		mendelbrot(fractal);
+		mandelbrot(fractal);
 	else if (fractal->type == 2)
 		julia(fractal);
 }
@@ -41,7 +41,7 @@ void	checker(int argc, char **argv, t_fractal *fractal)
 {
 	if (argc > 1)
 	{
-		if (argc == 2 && ft_strncmp(argv[1], "mendelbrot", 10) == 0)
+		if (argc == 2 && ft_strncmp(argv[1], "mandelbrot", 10) == 0)
 			fractal->type = 1;
 		else if (ft_strncmp(argv[1], "julia", 5) == 0)
 			checkparameter(argc, argv, fractal);

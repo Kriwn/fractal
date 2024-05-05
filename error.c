@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 15:54:04 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 14:09:22 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:44:51 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	error(t_fractal *fractal)
 	ft_putstr_fd("|***********************************************|");
 	ft_putstr_fd("|Should Run ./fractal piture parameter parameter|");
 	ft_putstr_fd("|         ./fractal julia 0.285 0.01            |");
-	ft_putstr_fd("|         ./fractal mendelbrot                  |");
+	ft_putstr_fd("|         ./fractal mandelbrot                  |");
 	ft_putstr_fd("|***********************************************|");
 	free(fractal);
 	exit(22);

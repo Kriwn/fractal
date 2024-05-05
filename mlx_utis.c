@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:56:49 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 19:51:43 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:52:35 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_hook(mlx_key_data_t keydata, void *param)
 	t_fractal	*fractal;
 
 	fractal = (t_fractal *)param;
-	if (keydata.action == MLX_KEY_ESCAPE)
+	if (keydata.key == MLX_KEY_ESCAPE)
 		mlx_close_window(fractal->mlx);
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_UP))
 	{
@@ -67,12 +67,11 @@ void	sc_hook(double xdelta, double ydelta, void *param)
 			fractal->zoom *= 1 + level;
 		else
 			fractal->zoom /= 1 + level;
-			fractal->posx = (fractal->curx - fractal->centerx)
+		fractal->posx = (fractal->curx - fractal->centerx)
 			/ fractal->zoom + fractal->posx;
-			fractal->posy = (fractal->cury - fractal->centery)
+		fractal->posy = (fractal->cury - fractal->centery)
 			/ fractal->zoom + fractal->posy;
 		drawer(fractal);
-
 	}
 }
 
