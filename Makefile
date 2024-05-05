@@ -1,5 +1,5 @@
 NAME	= fractal
-CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast
+CFLAGS	:= -Wextra -Wall -Werror
 # CFLAGS	= -g
 LIBMLX	= ./lib/MLX42
 

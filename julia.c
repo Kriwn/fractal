@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:06:32 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 20:55:18 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:49:22 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,11 @@ void	julia(t_fractal *fractal)
 		while (x < fractal->centerx)
 		{
 			n = check_julia(x, y, fractal);
-			color = get_rgba(0, 0, (255 * n) / 100, 255);
+			if (n == ITER)
+				color = get_rgba(0, 0, 0, fractal->a);
+			else
+				color = get_rgba((fractal->r * n) / 100, (fractal->g * n)
+						/ 100, (fractal->b * n) / 100, fractal->a);
 			mlx_put_pixel(fractal->image, fractal->centerx + x,
 				fractal->centery + y, color);
 			x++;

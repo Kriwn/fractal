@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:26:38 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 18:48:07 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:49:50 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	celtic(t_fractal *fractal)
 	int	n;
 	int	color;
 
-	printf("DO\n");
 	y = fractal->centery * -1;
 	while (y < fractal->centery)
 	{
@@ -49,7 +48,11 @@ void	celtic(t_fractal *fractal)
 		while (x < fractal->centerx)
 		{
 			n = checkceltic(x, y, fractal);
-			color = get_rgba((255 * n) / 100, 0, 0, 255 - (n % 255));
+			if (n == ITER)
+				color = get_rgba(0, 0, 0, fractal->a);
+			else
+				color = get_rgba((fractal->r * n) / 100, (fractal->g * n)
+						/ 100, (fractal->b * n) / 100, fractal->a);
 			mlx_put_pixel(fractal->image, fractal->centerx + x,
 				fractal->centery + y, color);
 			x++;

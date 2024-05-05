@@ -6,11 +6,19 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:45:38 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 20:44:38 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:22:03 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal_bonus.h"
+
+void	color(t_fractal *fractal)
+{
+	fractal->r = rand() % 256;
+	fractal->g = rand() % 256;
+	fractal->b = rand() % 256;
+	fractal->a = rand() % 256;
+}
 
 void	drawer(t_fractal *fractal)
 {
@@ -37,6 +45,10 @@ void	checkparameter(int argc, char **argv, t_fractal *fractal)
 		fractal->c.image = ft_atof(argv[3]);
 	}
 	fractal->type = 2;
+	fractal->r = 0;
+	fractal->g = 0;
+	fractal->b = 255;
+	fractal->a = 255;
 }
 
 void	checker(int argc, char **argv, t_fractal *fractal)
@@ -44,11 +56,23 @@ void	checker(int argc, char **argv, t_fractal *fractal)
 	if (argc > 1)
 	{
 		if (argc == 2 && ft_strncmp(argv[1], "mandelbrot", 10) == 0)
+		{
 			fractal->type = 1;
+			fractal->r = 255;
+			fractal->g = 255;
+			fractal->b = 255;
+			fractal->a = 255;
+		}
 		else if (ft_strncmp(argv[1], "julia", 5) == 0)
 			checkparameter(argc, argv, fractal);
 		else if (ft_strncmp(argv[1], "celtic", 6) == 0 && argc == 2)
+		{
 			fractal->type = 3;
+			fractal->r = 255;
+			fractal->g = 0;
+			fractal->b = 0;
+			fractal->a = 255;
+		}
 		else
 			error(fractal);
 	}

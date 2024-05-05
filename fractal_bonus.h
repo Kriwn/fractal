@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:23:36 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 21:01:10 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:39:12 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ typedef struct fractal
 	int					centerx;
 	int					centery;
 	int					type;
+	int					r;
+	int					g;
+	int					b;
+	int					a;
 	t_complex			c;
 
 }	t_fractal;
@@ -88,8 +92,10 @@ void		drawer(t_fractal *fractal);
 void		checkparameter(int argc, char **argv, t_fractal *fractal);
 void		checker(int argc, char **argv, t_fractal *fractal);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+void		color(t_fractal *fractal);
 
 //***************celtic_bonus.c*********//
 int			checkceltic(int x, int y, t_fractal *fractal);
 void		celtic(t_fractal *fractal);
+
 #endif

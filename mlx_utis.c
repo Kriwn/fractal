@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:56:49 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/05/05 20:52:35 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:47:56 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	ft_hook(mlx_key_data_t keydata, void *param)
 		zoomcenter(1, fractal);
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_MINUS))
 		zoomcenter(0, fractal);
+	if (mlx_is_key_down(fractal->mlx, MLX_KEY_R))
+		color(fractal);
 	drawer(fractal);
 }
 
