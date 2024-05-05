@@ -8,6 +8,7 @@ LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 SRCS	= ./mlx_utis.c ./fractal.c ./utils.c ./error.c ./mandelbrot.c ./julia.c ./complex.c ./ft_atof.c
 
 SRCS_BONUS	=  ./complex.c  ./mlx_utis.c ./celtic_bonus.c  ./julia.c ./utils_bonus.c  ./error_bonus.c  ./ft_atof.c ./mandelbrot.c  ./fractal_bonus.c
+
 OBJS	= ${SRCS:.c=.o}
 
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
